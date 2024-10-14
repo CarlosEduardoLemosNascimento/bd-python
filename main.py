@@ -107,3 +107,6 @@ for cliente in lista_clientes:
         print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
     else:
         print("Cliente não encontrado.")
+
+    # Fechando conexão
+    session.close()
