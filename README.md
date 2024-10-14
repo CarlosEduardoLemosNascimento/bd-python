@@ -1,6 +1,6 @@
 # Aula de CRUD - Banco de Dados.
 
-# Objetivos:
+# Objetivo:
 Criar conexão com anco de dados e realizar operações básicas (CRUD).
 
 ### Tecnologias:
