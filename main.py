@@ -30,3 +30,23 @@ class Cliente(Base):
 
 # Criando tabela no banco de dados
 Base.metadata.create_all(bind=MEU_BANCO)
+
+# CRUD
+# Create - Insert - Salvar
+os.system("cls || clear")
+print("Solicitante dados para o usuário. ")
+inserir_nome = input("Digite seu nome: ")
+inserir_email = input("Digite seu email: ")
+inserir_senha = input("Digite sua senha: ")
+
+cliente = Cliente(nome=inserir_nome, email=inserir_email, senha=inserir_senha)
+session.add(cliente)
+session.commit()
+
+# Read - select - Consulta
+print("\nExibindo dados de todos os clientes")
+lista_clientes = session.query(Cliente).all()
+
+for Cliente in lista_clientes:
+    print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
+    
