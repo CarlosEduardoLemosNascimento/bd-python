@@ -92,3 +92,18 @@ lista_clientes = session.query(Cliente).all()
 
 for cliente in lista_clientes:
     print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
+
+# Read - select - Consulta
+print("\nConsultando os dados de apenas um cliente")
+lista_clientes = session.query(Cliente).all()
+
+for cliente in lista_clientes:
+    print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
+    email_cliente = input("Digite o e-mail do ciente: ")
+
+    cliente = session.query(Cliente).filter_by(email = email_cliente).first()
+
+    if cliente:
+        print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
+    else:
+        print("Cliente não encontrado.")
