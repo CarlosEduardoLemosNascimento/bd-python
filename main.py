@@ -23,7 +23,7 @@ class Cliente(Base):
     senha = Column("senha", String)
 
     # Definindo atributos da classe
-    def __init__ (self, nome:str, email:str, senha:str)
+    def __init__ (self, nome:str, email:str, senha:str):
         self.nome = nome
         self.email = email
         self.senha = senha
@@ -49,4 +49,25 @@ lista_clientes = session.query(Cliente).all()
 
 for Cliente in lista_clientes:
     print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
-    
+
+# U - Update - UPDATE - Atualizar
+print("\nAtualizando dados do usuário. ")
+email_cliente = input("Digite o e-mail do ciente que será atualizado: ")
+
+cliente = session.query(Cliente).filter_by(email = email_cliente).first()
+
+if cliente:
+    cliente.nome = input("Digite o seu nome: ")
+    cliente.email = input("Digite o seu e-mail: ")
+    cliente.senha = input("Digite sua senha: ")
+
+    session.commit()
+else:
+    print("Cliente não encontrado. ")
+
+# Read - select - Consulta
+print("\nExibindo dados de todos os clientes")
+lista_clientes = session.query(Cliente).all()
+
+for Cliente in lista_clientes:
+    print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
