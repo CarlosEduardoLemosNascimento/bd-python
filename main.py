@@ -47,7 +47,7 @@ session.commit()
 print("\nExibindo dados de todos os clientes")
 lista_clientes = session.query(Cliente).all()
 
-for Cliente in lista_clientes:
+for cliente in lista_clientes:
     print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
 
 # U - Update - UPDATE - Atualizar
@@ -69,5 +69,5 @@ else:
 print("\nExibindo dados de todos os clientes")
 lista_clientes = session.query(Cliente).all()
 
-for Cliente in lista_clientes:
+for cliente in lista_clientes:
     print(f"{cliente.id} - {cliente.nome} - {cliente.email} - {cliente.senha}")
